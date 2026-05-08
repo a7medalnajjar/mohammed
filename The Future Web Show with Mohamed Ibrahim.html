@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"مِصرَ الحديثة" (Modern Egypt)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+     <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">EGYPT <span class="gold">VISION</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#mega-projects">المشروعات</a></li>
+                <li><a href="Login.html">تسجيل دخول</a></li>
+                <li><a href="signin.html">اصنع حساب جديد</a></li>
+                <li><a href="Ingjoid.html">انضم الينا</a></li>
+                <li><a href="almathf.html">اهم مشروع(المتحف المصري الكبير)</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #0f111a;
+            --white: #ffffff;
+            --gray: #252833;
+        }
+        nav {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 0;
+    backdrop-filter: blur(15px);
+    background: rgba(10, 14, 20, 0.8);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    width: 85%; margin: auto;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo { font-family: 'Reem Kufi', sans-serif; font-size: 26px; font-weight: 700; }
+.gold { color: var(--gold); }
+
+.nav-links { list-style: none; display: flex; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-main);
+    margin-right: 30px; font-size: 15px; font-weight: 600;
+    transition: 0.3s;
+}
+.nav-links li a:hover { color: var(--gold); }
+
+
+        * { margin: 3px; padding: 3px; box-sizing: border-box; }
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Cairo', sans-serif; 
+            scroll-behavior: smooth;
+        }
+
+        /* الجزء العلوي - Hero */
+        .hero {
+            height: 110vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--dark)), 
+                        url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=2070') no-repeat center/cover fixed;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 20px;
+        }
+        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -2px; line-height: 1; }
+        .hero span { color: var(--gold); }
+        .hero p { font-size: 1.5rem; margin-top: 20px; opacity: 0.8; max-width: 600px; }
+
+        /* الأقسام الطويلة - Full Height Sections */
+        section {
+            padding: 100px 10%;
+            min-height: 100vh;
+            display: flex; align-items: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        .content-box { display: flex; align-items: center; gap: 50px; width: 100%; flex-wrap: wrap; }
+        .text-side { flex: 1; min-width: 300px; }
+        .image-side { flex: 1; min-width: 300px; position: relative; }
+
+        .image-side img { 
+            width: 100%; border-radius: 20px; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            transition: 0.5s ease;
+        }
+        .image-side:hover img { transform: scale(1.03) rotate(-1deg); }
+
+        .image-side::after {
+            content: ""; position: absolute; top: -20px; right: -20px;
+            width: 100%; height: 100%; border: 2px solid var(--gold);
+            border-radius: 20px; z-index: -1;
+        }
+
+        h2 { font-size: 3rem; color: var(--gold); margin-bottom: 25px; position: relative; }
+        h2::after { content: ""; position: absolute; bottom: -10px; right: 0; width: 80px; height: 4px; background: var(--gold); }
+        p { font-size: 1.2rem; line-height: 1.9; color: #ccc; text-align: justify; }
+
+        /* ميزة الأرقام - Stats */
+        .stats {
+            display: flex; justify-content: space-around; padding: 80px 10%;
+            background: var(--gray); text-align: center;
+        }
+        .stat-item h3 { font-size: 3rem; color: var(--gold); }
+        .stat-item p { font-size: 1rem; color: var(--white); text-align: center; }
+
+        /* قسم المونوريل - عرض عريض */
+        .wide-section {
+            background: linear-gradient(rgba(15, 17, 26, 0.9), rgba(15, 17, 26, 0.9)),
+                        url('https://images.unsplash.com/photo-1540944158204-28dc781a54c5?q=80&w=2069') center/cover fixed;
+            text-align: center; padding: 150px 10%;
+        }
+        .wide-section h2 { display: inline-block; }
+
+        /* التذييل الفاخر */
+        footer {
+            padding: 80px 10%; background: #252833; text-align: center;
+        }
+        .footer-logo { font-size: 2rem; font-weight: 900; color: var(--gold); margin-bottom: 20px;  width: 50px; height: 50px;}
+        .links a { color: white; text-decoration: none; margin: 0 15px; opacity: 0.6; transition: 0.3s; }
+        .links a:hover { opacity: 1; color: var(--gold); }
+
+        /* انيميشن الظهور */
+        .reveal { opacity: 0; transform: translateY(50px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .content-box { flex-direction: column; text-align: center; }
+            h2::after { right: 50%; transform: translateX(50%); }
+            .hero h1 { font-size: 3rem; }
+
+
+     
+}
+        /* الألوان النيون اللي بنحبها */
+:root {
+    --neon-blue: #00d2ff;
+    --neon-purple: #9d50bb;
+    --live-red: #ff0055;
+}
+/* حاوية الإيقاع الرقمي */
+.visualizer {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    height: 50px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+/* تصميم الأعمدة وحركتها (بدون JS) */
+.visualizer span {
+    width: 6px;
+    background: var(--neon-blue);
+    border-radius: 3px;
+    /* الحركة شغالة تلقائي أول ما الصفحة تفتح */
+    animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+/* توزيع سرعات مختلفة للأعمدة عشان شكلها يبقى واقعي */
+.visualizer span:nth-child(1) { animation-duration: 0.4s; }
+.visualizer span:nth-child(2) { animation-duration: 0.7s; animation-delay: 0.1s; }
+.visualizer span:nth-child(3) { animation-duration: 0.5s; animation-delay: 0.2s; }
+.visualizer span:nth-child(4) { animation-duration: 0.9s; animation-delay: 0.3s; }
+.visualizer span:nth-child(5) { animation-duration: 0.6s; animation-delay: 0.4s; }
+
+@keyframes bounce {
+    from { 
+        height: 10px; 
+        background: var(--neon-blue); 
+        box-shadow: none;
+    }
+    to { 
+        height: 45px; 
+        background: var(--neon-purple); 
+        box-shadow: 0 0 15px var(--neon-purple); 
+    }
+}
+
+/* نصوص التحديث */
+.info-text {
+    color: #fff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.info-text h3 { margin: 5px 0; font-size: 20px; }
+.info-text p { color: var(--neon-blue); font-size: 14px; font-weight: bold; }
+
+/* مشغل الأغنية (التعديل النيون) */
+audio {
+    width: 100%;
+    filter: invert(1) hue-rotate(180deg) brightness(1.5);
+    margin-top: 10px;
+}
+
+/* علامة لايف تراك (تحت الأغنية) */
+.live-badge {
+    display: table;
+    margin: 15px auto 0;
+    background: var(--live-red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--live-red);
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite; /* تأثير نبض للعلامة */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+.m4{
+    width:    50%;
+    height: 50%  ;
+    border-radius: 9px;
+
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+.gallery img {
+  width: 50%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+    <!-- الواجهة الرئيسية -->
+    <div class="hero" id="hero">
+        <h1>مصر <span>2030</span></h1>
+        <p>نكتب فصلاً جديداً في تاريخ الحضارة، حيث تلتقي الأرض بالسماء في مشاريع لا تعرف المستحيل.</p>
+        <div style="margin-top: 50px; color: var(--gold); animation: bounce 2s infinite; border-radius: 5px;">⬇ اسحب للأسفل للاستكشاف</div>
+    </div>
+
+
+<div class="visualizer">
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="info-text">
+    <h3>الإيقاع الرقمي</h3>
+    <p>تحديث برمجة: محمد إبراهيم</p>
+</div>
+<audio controls>
+    <source src="my Musice.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="live-badge">LIVE TRACK</div>
+    <!-- العاصمة الإدارية -->
+    <section id="mega-projects">
+        <div class="content-box">
+            <div class="text-side reveal">
+                <h2>العاصمة الإدارية</h2>
+                <p>ليست مجرد مدينة، بل هي قلب مصر النابض الجديد. تضم البرج الأيقوني الأطول في أفريقيا، والحي الحكومي الذكي الذي يعتمد كلياً على التكنولوجيا الخضراء. صُممت لتكون مركزاً مالياً وإدارياً عالمياً يضاهي أرقى مدن العالم.</p>
+                <a href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9_%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?q=80&w=1975" alt="Capital City">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- مدينة العلمين -->
+    <section id="mega-projects" style="background: #151823;">
+        <div class="content-box">
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1590418606746-018840f9cd0f?q=80&w=1887" alt="Alamein">
+            </div>
+            <div class="text-side reveal">
+                <h2>مدينة العلمين الجديدة</h2>
+                <p>درة البحر المتوسط، تحولت من حقل ألغام إلى مدينة سياحية وسكنية عالمية تعمل طوال العام. بأبراجها التي تعانق السحاب وشواطئها الفيروزية، تمثل العلمين رؤية مصر لساحل شمالي متطور ومستدام.</p>
+                <a href="https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D9%86_%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9"><i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- المونوريل -->
+    <section class="mega-projects" >
+        <div class="content-box">
+             <h2>أطول مونوريل في العالم</h2>
+            <p style="text-align: center; max-width: 800px; margin: 20px auto;">ثورة في عالم النقل الجماعي، يربط شرق القاهرة ببعضها في وقت قياسي، ويعمل بالطاقة النظيفة ليوفر تجربة انتقال سريعة وآمنة وحضارية تليق بالمواطن المصري.</p>
+            <a class="arrow-left" href="https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D9%88%D8%B1%D9%8A%D9%84_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9"><i class="fas fa-arrow-left"></i></a>
+                        <div class="image-side">
+                <img src="Monorell.png" alt="Energy">
+                
+            </div>
+
+        </div>
+    </section>
+
+    <!-- محطة الضبعة -->
+    <section id="mega-projects">
+        <div class="content-box">
+            <div class="text-side reveal">
+                <h2>محطة الضبعة النووية</h2>
+                <p>دخول مصر للنادي النووي السلمي. المشروع الذي طال انتظاره لتوليد طاقة نظيفة ومستدامة تدفع عجلة الصناعة المصرية نحو آفاق غير مسبوقة، وتضمن مستقبلاً آمناً للأجيال القادمة.</p>
+                <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B7%D8%A9_%D8%A7%D9%84%D8%B6%D8%A8%D8%B9%D8%A9_%D8%A7%D9%84%D9%86%D9%88%D9%88%D9%8A%D8%A9"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070" alt="Energy">
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="mega-projects">
+        <div class="content-box">
+            <div class="text-side reveal">
+                <h2>مجمع بنبان للطاقة الشمسية</h2>
+                <p>يُعد مجمع بنبان للطاقة الشمسية (Benban Solar Park) في محافظة أسوان بمصر واحدًا من أضخم المشروعات القومية وأيقونة عالمية في مجال الطاقة المتجددة، ويلقب بـ "عاصمة العالم للطاقة الشمسية".
+
+إليك أبرز المعلومات الجوهرية حول هذا المجمع:
+1. الموقع والبيئة
+
+    الموقع: يقع في قرية بنبان بمركز دراو بمحافظة أسوان، على بعد حوالي 40 كم شمال غرب المدينة.
+
+    التميز الجغرافي: تم اختيار الموقع بناءً على تقارير وكالة "ناسا" التي أكدت أنه من أكثر المناطق سطوعاً للشمس في العالم.
+
+    المساحة: يمتد المجمع على مساحة هائلة تصل إلى 37.2 كم²، وهو ما يجعله مرئياً بوضوح من الفضاء.
+
+2. القدرة الإنتاجية والتفاصيل الفنية
+
+    القدرة الإجمالية: تبلغ القدرة الحالية للمجمع حوالي 1465 ميجاوات (وتستهدف التوسعات الوصول إلى 2000 ميجاوات).
+
+    المقارنة بالسد العالي: تنتج المحطة طاقة تعادل حوالي 90% من الطاقة المولدة من السد العالي، مما يعزز أمن الطاقة في مصر.
+
+    عدد المحطات: يضم المجمع حوالي 32 إلى 40 محطة شمسية فرعية، تدار بواسطة شركات عالمية ومحلية مختلفة بنظام "الخلايا الفوتوفولتية".
+
+    البنية التحتية: يضم 4 محطات محولات ضخمة (بتقنية GIS المعزولة بالغاز) لنقل الطاقة للشبكة القومية للكهرباء.
+
+3. الأهمية الاقتصادية والبيئية
+
+    استثمارات ضخمة: بلغت تكلفة المشروع حوالي 2 مليار دولار، بتمويل من مؤسسات دولية كبرى مثل البنك الدولي والبنك الأوروبي لإعادة الإعمار والتنمية.
+
+    فرص العمل: وفر المشروع أكثر من 10,000 فرصة عمل مباشرة وغير مباشرة خلال فترة التنفيذ والتشغيل.
+
+    الحفاظ على البيئة: يساهم المجمع في خفض انبعاثات الكربون بمقدار 2 مليون طن سنوياً، وهو ما يتماشى مع خطة مصر للوصول بنسبة الطاقة المتجددة إلى 42% بحلول عام 2030.
+
+4. الجوائز العالمية
+
+حصل مجمع بنبان على عدة إشادات وجوائز دولية مرموقة، منها:
+
+    جائزة البنك الدولي: كأفضل مشروع على مستوى العالم في عام 2019.
+
+    جائزة التميز الحكومي العربي: كأفضل مشروع لتطوير البنية التحتية.
+
+    هل تعلم؟ المشروع نُفذ بنظام الـ (Build-Own-Operate)، حيث قامت الحكومة المصرية بتمهيد الأرض وتوفير البنية الأساسية، بينما قام المستثمرون من القطاع الخاص ببناء وتشغيل المحطات، مما يجعله نموذجاً ناجحاً للشراكة بين القطاعين العام والخاص.</p>
+                <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B7%D8%A9_%D8%A8%D9%86%D8%A8%D8%A7%D9%86_%D9%84%D9%84%D8%B7%D8%A7%D9%82%D8%A9_%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A%D8%A9"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="image-side">
+                <img src="benban.jpg" alt="Energy">
+                
+            </div>
+        </div>
+    </section>
+
+
+        <section class="mega-projects" >
+        <div class="content-box">
+             <h2>مطار العاصمة الايدارية الجديدة</h2>
+            <p style="text-align: center; max-width: 800px; margin: 20px auto;">ثورة في عالم النقل الجماعي، يربط شرق القاهرة ببعضها في وقت قياسي، ويعمل بالطاقة النظيفة ليوفر تجربة انتقال سريعة وآمنة وحضارية تليق بالمواطن المصري.</p>
+            <a class="arrow-left" href="https://ar.wikipedia.org/wiki/%D9%85%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A"><i class="fas fa-arrow-left"></i></a>
+                        <div class="image-side">
+                <img style="width: 50%; height: 50%;" src="matar alasemaa.jpg" alt="Energy">
+                
+            </div>
+
+        </div>
+    </section>
+      
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-logo">مصر المستقبل</div>
+<div class="gallery">
+ <img class="m4" src="Mohamed.jpeg" alt="">
+
+</div>
+        <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.4; font-size: x-large; text-align: center;">جميع الحقوق محفوظة لمشروع الجمهورية الجديدة &copy; 2026</p>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    </footer>
+<!-- <div class="video-card">
+<iframe width="1020" height="574" src="https://youtu.be/xfWovGfpqRA" title="اهم 10 مشروعات قومية في مصر 2021" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div> -->
+    <!-- سكربت بسيط لتفعيل انيميشن الظهور عند السكرول -->
+    <script>
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        // تشغيلها مرة عند التحميل
+        reveal();
+    </script>
+
+</body>
+</html>

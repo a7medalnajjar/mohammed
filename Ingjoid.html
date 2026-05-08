@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>انضم الينا  </title>
+     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+                :root {
+            --gold: #c5a059;
+            --dark: #0f111a;
+            --white: #ffffff;
+            --gray: #252833;
+        }
+           nav {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 0;
+    backdrop-filter: blur(15px);
+    background: rgba(10, 14, 20, 0.8);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    width: 85%; margin: auto;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo { font-family: 'Reem Kufi', sans-serif; font-size: 26px; font-weight: 700; }
+.gold { color: var(--gold); }
+
+.nav-links { list-style: none; display: flex; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-main);
+    margin-right: 30px; font-size: 15px; font-weight: 600;
+    transition: 0.3s;
+}
+.nav-links li a:hover { color: var(--gold); }
+
+        *{
+            margin: 3px;
+            padding: 3px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        /* حاوية اللوجو */
+        .telegram-logo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #2aabee, #229ed9);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(34, 158, 217, 0.4);
+            cursor: pointer;
+            display: flex;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* رسم الطائرة الورقية بالـ CSS */
+        .telegram-logo::before {
+            content: '';
+            position: absolute;
+            top: 52%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            width: 85px;
+            height: 85px;
+            background-color: white;
+            clip-path: polygon(100% 0, 0 45%, 38% 58%, 45% 100%, 58% 70%, 85% 90%);
+            display: flex;
+        }
+
+        /* إضافة لمسة احترافية (تأثير الإضاءة) */
+        .telegram-logo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        /* حركة جذابة عند مرور الماوس لإبهار الإدارة */
+        .telegram-logo:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 20px 40px rgba(34, 158, 217, 0.6);
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+     <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">EGYPT <span class="gold">VISION</span></div>
+            <ul class="nav-links">
+                <li><a href="The Future Web Show with Mohamed Ibrahim.html">الرئيسية</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<h1>انضم الينا</h1>
+<h2>Telegram</h2>
+    <a href="https://web.telegram.org/a/#-1003890965572"><div  class="telegram-logo"></div></a>
+
+</body>
+</html>

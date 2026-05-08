@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموسوعة الشاملة | المتحف المصري الكبير (GEM 2026)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@200;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* [1] نظام الهوية البصرية (Luxury CSS Matrix) */
+        :root {
+            --gold: #D4AF37; --gold-dark: #996515; --black: #050505;
+            --gray: #121212; --white: #ffffff; --transition: all 0.6s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background: var(--black); color: var(--white); font-family: 'Cairo', sans-serif; overflow-x: hidden; }
+
+        /* [2] القائمة الملكية (Navigation) */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 8%;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; border-bottom: 2px solid var(--gold);
+        }
+        .logo { font-family: 'Amiri', serif; font-size: 2.2rem; color: var(--gold); text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: 400; transition: 0.3s; }
+        nav a:hover { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+
+        /* [3] قسم البطولة (Hero Section) */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), var(--black)), 
+                        url('https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80&w=1500') center/cover fixed;
+            text-align: center;
+        }
+        .hero h1 { font-family: 'Amiri', serif; font-size: 8vw; color: var(--gold); text-shadow: 0 0 30px black; }
+        .hero p { letter-spacing: 10px; font-size: 1.5rem; text-transform: uppercase; color: #ccc; }
+
+        /* [4] الخريطة الهندسية الداخلية (Interactive Floor Plan) */
+        .map-section { padding: 100px 8%; background: var(--gray); text-align: center; }
+        .map-section h2 { font-family: 'Amiri', serif; font-size: 3.5rem; color: var(--gold); margin-bottom: 50px; }
+        .museum-grid {
+            display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 120px; gap: 15px;
+            background: rgba(255,255,255,0.01); padding: 30px; border: 1px solid var(--gold-dark);
+        }
+        .hall {
+            border: 1px solid rgba(212, 175, 55, 0.2); display: flex; align-items: center;
+            justify-content: center; text-align: center; cursor: pointer; transition: var(--transition);
+            background: rgba(212, 175, 55, 0.03); color: var(--gold); font-size: 0.9rem;
+        }
+        .hall:hover { background: var(--gold); color: black; font-weight: 900; transform: scale(1.03); z-index: 10; }
+        .h-main { grid-column: 1 / 13; height: 150px; font-size: 2rem; background: #000; border: 2px solid var(--gold); }
+        .h-wing { grid-column: span 6; grid-row: span 3; background: rgba(212,175,55,0.1); }
+        .h-side { grid-column: span 3; }
+
+        /* [5] السردية التاريخية (Infinite Content) */
+        .wing-content { padding: 150px 10%; border-bottom: 1px solid #222; }
+        .wing-flex { display: flex; gap: 60px; align-items: center; margin-bottom: 100px; }
+        .wing-flex:nth-child(even) { flex-direction: row-reverse; }
+        .wing-text { flex: 1; }
+        .wing-text h3 { font-family: 'Amiri', serif; font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .wing-text p { font-size: 1.2rem; line-height: 2.2; color: #aaa; text-align: justify; }
+        .wing-box { flex: 1; height: 400px; border: 1px solid var(--gold); position: relative; opacity: 0.5; }
+
+        /* [6] الخريطة الجغرافية (Live Google Map) */
+        .live-map { height: 500px; width: 100%; border-top: 5px solid var(--gold); }
+        iframe { width: 100%; height: 100%; filter: grayscale(1) invert(0.9); }
+
+        /* [7] خريطة الموقع (Mega Sitemap) */
+        .sitemap { padding: 100px 8%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; background: #080808; }
+        .site-col h4 { color: var(--gold); font-size: 1.5rem; margin-bottom: 20px; border-right: 4px solid var(--gold); padding-right: 15px; }
+        .site-col ul { list-style: none; }
+        .site-col li { margin-bottom: 12px; }
+        .site-col a { color: #777; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .site-col a:hover { color: white; padding-right: 10px; }
+
+        footer { padding: 80px; text-align: center; border-top: 1px solid var(--gold-dark); background: #000; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">GEN alfa</a>
+        <ul>
+            <li><a href="The Future Web Show with Mohamed Ibrahim.html">الصفحة الام</a></li>
+            <li><a href="#about">الرئيسية</a></li>
+            <li><a href="#map">خريطة القاعات</a></li>
+            <li><a href="#sitemap">خريطة الموقع</a></li>
+            <li><a href="https://egymonuments.gov.eg/" target="_blank">الموقع الرسمي</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="about">
+        <div>
+            <p>حضارة لا يطويها النسيان</p>
+            <h1>المتحف المصري الكبير</h1>
+            <div style="width: 200px; height: 2px; background: var(--gold); margin: 30px auto;"></div>
+            <p style="font-size: 1.2rem; letter-spacing: 5px;">أكبر متاحف العالم في قلب الجيزة</p>
+        </div>
+    </header>
+ <audio controls>
+    <source src="WhatsApp Audio 2026-04-07 at 10.49.09 PM.mp3" type="audio/mpeg">
+</audio>
+    <section class="map-section" id="map">
+        <h2>المخطط الهندسي الداخلي</h2>
+        <div class="museum-grid">
+            <div class="hall h-main">بهو رمسيس الثاني - نقطة الصفر</div>
+            <div class="hall h-wing">جناح الملك توت عنخ آمون (الكنوز الكاملة)</div>
+            <div class="hall h-side">أجنحة الدولة القديمة</div>
+            <div class="hall h-side">أجنحة الدولة الوسطى</div>
+            <div class="hall h-side">أجنحة الدولة الحديثة</div>
+            <div class="hall h-side">معامل الترميم</div>
+            <div class="hall" style="grid-column: span 6;">المكتبة الرقمية وقاعات البحث العلمي</div>
+            <div class="hall">قاعة 101</div><div class="hall">قاعة 102</div><div class="hall">قاعة 103</div><div class="hall">قاعة 104</div>
+            <div class="hall">قاعة 105</div><div class="hall">قاعة 106</div><div class="hall">قاعة 107</div><div class="hall">قاعة 108</div>
+        </div>
+    </section>
+
+    <section class="wing-content">
+        <div class="wing-flex">
+            <div class="wing-text">
+                <h3>كنوز الملك الذهبي</h3>
+                <p>يضم هذا القسم أكثر من 5000 قطعة أثرية تخص الملك الشاب توت عنخ آمون، معروضة لأول مرة في مكان واحد. تم استخدام أحدث تقنيات العرض المتحفي لضمان الحفاظ على القطع النادرة وتوفير رؤية بانورامية للزوار.</p>
+            </div>
+            <div class="wing-box"></div>
+        </div>
+        <div class="wing-flex">
+            <div class="wing-text">
+                <h3>الدرج العظيم</h3>
+                <p>رحلة عبر الزمن تبدأ من أسفل إلى أعلى، حيث يستعرض الزائر تطور فن النحت المصري عبر العصور، وصولاً إلى قمة الدرج التي تطل على أهرامات الجيزة الخالدة في مشهد مهيب يربط الماضي بالحاضر.</p>
+            </div>
+            <div class="wing-box"></div>
+        </div>
+    </section>
+
+    <section class="live-map">
+        <iframe src="https://www.google.com/maps/@29.9931986,31.1270158,806m/data=!3m1!1e3?hl=ar&entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="sitemap" id="sitemap">
+        <div class="site-col">
+            <h4>عن المتحف</h4>
+            <ul>
+                <li><a href="#">تاريخ التأسيس</a></li><li><a href="#">العمارة</a></li>
+                <li><a href="#">رؤية 2030</a></li><li><a href="#">المجلس الاستشاري</a></li>
+                <li><a href="#">شركاء النجاح</a></li><li><a href="#">جوائز دولية</a></li>
+            </ul>
+        </div>
+        <div class="site-col">
+            <h4>الأقسام الملكية</h4>
+            <ul>
+                <li><a href="#">الدولة القديمة</a></li><li><a href="#">الدولة الوسطى</a></li>
+                <li><a href="#">الدولة الحديثة</a></li><li><a href="#">كنوز توت</a></li>
+                <li><a href="#">المومياوات الملكية</a></li><li><a href="#">الآثار الغارقة</a></li>
+            </ul>
+        </div>
+        <div class="site-col">
+            <h4>الخدمات والزيارة</h4>
+            <ul>
+                <li><a href="#">حجز التذاكر</a></li><li><a href="#">خريطة الوصول</a></li>
+                <li><a href="#">المطاعم</a></li><li><a href="#">المتجر الرسمي</a></li>
+                <li><a href="#">قواعد التصوير</a></li><li><a href="#">الجولات الافتراضية</a></li>
+            </ul>
+        </div>
+        <div class="site-col">
+            <h4>البحث العلمي</h4>
+            <ul>
+                <li><a href="#">مركز الترميم</a></li><li><a href="#">المكتبة</a></li>
+                <li><a href="#">الأبحاث المنشورة</a></li><li><a href="#">البعثات</a></li>
+                <li><a href="#">قاعدة البيانات</a></li><li><a href="#">تواصل علمي</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 المتحف المصري الكبير | كل الحقوق محفوظة لوزارة السياحة والآثار</p>
+        <p style="color: var(--gold); margin-top: 10px; font-size: 0.8rem;">تم تصميم هذا المشروع ليكون أرقى تمثيل رقمي للحضارة المصرية</p>
+    </footer>
+
+</body>
+</html>
